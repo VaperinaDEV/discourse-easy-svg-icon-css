@@ -1,0 +1,45 @@
+@import "svg-icons/fontawesome/brands";
+@import "svg-icons/fontawesome/regular";
+@import "svg-icons/fontawesome/solid";
+
+$svg-prefix: 'data:image/svg+xml;utf-8,';
+
+@mixin svg-icon($icon-type, $svg-icon, $width, $height) {
+  @if $icon-type == 'brands' {
+    $svg-url: $svg-prefix + map-get($brands, $svg-icon);
+    -webkit-mask-image: url($svg-url);
+  }
+  @if $icon-type == 'regular' {
+    $svg-url: $svg-prefix + map-get($regular, $svg-icon);
+    -webkit-mask-image: url($svg-url);
+  }
+  @if $icon-type == 'solid' {
+    $svg-url: $svg-prefix + map-get($solid, $svg-icon);
+    -webkit-mask-image: url($svg-url);
+  }
+  width: $width;
+  height: $height;
+  background: currentColor;
+  -webkit-mask-size: $width $height;
+  -webkit-mask-repeat: no-repeat;
+}
+
+@mixin svg-icon-with-color($icon-type, $svg-icon, $iconcolor, $width, $height) {
+  @if $icon-type == 'brands' {
+    $svg-url: $svg-prefix + map-get($brands, $svg-icon);
+    -webkit-mask-image: url($svg-url);
+  }
+  @if $icon-type == 'regular' {
+    $svg-url: $svg-prefix + map-get($regular, $svg-icon);
+    -webkit-mask-image: url($svg-url);
+  }
+  @if $icon-type == 'solid' {
+    $svg-url: $svg-prefix + map-get($solid, $svg-icon);
+    -webkit-mask-image: url($svg-url);
+  }
+  width: $width;
+  height: $height;
+  background: $iconcolor;
+  -webkit-mask-size: $width $height;
+  -webkit-mask-repeat: no-repeat;
+}
