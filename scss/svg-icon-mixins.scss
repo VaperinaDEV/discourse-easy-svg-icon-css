@@ -4,27 +4,7 @@
 
 $svg-prefix: 'data:image/svg+xml;utf-8,';
 
-@mixin svg-icon($icon-set, $svg-icon, $width, $height) {
-  @if $icon-set == 'brands' {
-    $svg-url: $svg-prefix + map-get($brands, $svg-icon);
-    -webkit-mask-image: url($svg-url);
-  }
-  @if $icon-set == 'regular' {
-    $svg-url: $svg-prefix + map-get($regular, $svg-icon);
-    -webkit-mask-image: url($svg-url);
-  }
-  @if $icon-set == 'solid' {
-    $svg-url: $svg-prefix + map-get($solid, $svg-icon);
-    -webkit-mask-image: url($svg-url);
-  }
-  width: $width;
-  height: $height;
-  background: currentColor;
-  -webkit-mask-size: $width $height;
-  -webkit-mask-repeat: no-repeat;
-}
-
-@mixin svg-icon-with-color($icon-set, $svg-icon, $icon-color, $width, $height) {
+@mixin svg-icon($icon-set, $svg-icon, $icon-color, $width, $height) {
   @if $icon-set == 'brands' {
     $svg-url: $svg-prefix + map-get($brands, $svg-icon);
     -webkit-mask-image: url($svg-url);
